@@ -6,6 +6,12 @@ import org.gradle.kotlin.dsl.get
 class ConfigAndroidView : Plugin<Project> by local plugin {
     android {
         buildFeatures.viewBinding = true
-        buildFeatures.compose = true
+    }
+
+    kotlin {
+        sourceSets["commonMain"].dependencies {
+//            implementation(Module.generic.design)
+            implementation(Module.library.mvvm)
+        }
     }
 }

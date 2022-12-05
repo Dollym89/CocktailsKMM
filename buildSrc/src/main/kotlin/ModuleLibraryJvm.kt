@@ -7,7 +7,7 @@ class ModuleLibraryJvm : Plugin<Project> by local plugin {
         explicitApi()
 
         jvm()
-        ios()
+        iosAll()
     }
 
     apply<ConfigCompiler>()

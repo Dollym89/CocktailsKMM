@@ -17,18 +17,17 @@ class ConfigCompiler : Plugin<Project> by local plugin {
         }
     }
 
-    tasks.withType<KotlinCompile> {
-        kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_11.toString()
-        }
-    }
+//    tasks.withType<KotlinCompile> {
+//        kotlinOptions {
+//            jvmTarget = JavaVersion.VERSION_11.toString()
+//        }
+//    }
 
     kotlin {
-        sourceSets.apply {
-            all {
-                languageSettings {
-                    progressiveMode = true
-                }
+        sourceSets.all {
+            languageSettings {
+                progressiveMode = true
+                optIn("kotlin.time.ExperimentalTime")
             }
         }
     }

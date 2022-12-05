@@ -3,7 +3,12 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.artifacts.ModuleDependency
 import org.gradle.api.plugins.JavaPluginExtension
+import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.api.dsl.LibraryExtension
+import org.gradle.kotlin.dsl.findByType
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.dsl.KotlinTargetContainerWithNativeShortcuts
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 @Suppress("ClassName")
 internal object local
@@ -20,27 +25,35 @@ internal fun KotlinMultiplatformExtension.explicitApiAndroid() {
     }
 }
 
-internal fun Project.android(block: BaseExtension.() -> Unit) {
-    extensions.findByType(BaseExtension::class.java)?.apply(block)
+internal fun Project.androidApplication(block: ApplicationExtension.() -> Unit) {
+    extensions.findByType<ApplicationExtension>()?.apply(block)
+}
+
+internal fun Project.androidLibrary(block: LibraryExtension.() -> Unit) {
+    extensions.findByType<LibraryExtension>()?.apply(block)
+}
+
+internal fun Project.android(block: LibraryExtension.() -> Unit) {
+    extensions.findByType<LibraryExtension>()?.apply(block)
 }
 
 internal fun Project.java(block: JavaPluginExtension.() -> Unit) {
-    extensions.findByType(JavaPluginExtension::class.java)?.apply(block)
+    extensions.findByType<JavaPluginExtension>()?.apply(block)
 }
 
 internal fun Project.kotlin(block: KotlinMultiplatformExtension.() -> Unit) {
-    extensions.findByType(KotlinMultiplatformExtension::class.java)?.apply(block)
+    extensions.findByType<KotlinMultiplatformExtension>()?.apply(block)
 }
 
 @Suppress("UNCHECKED_CAST")
 internal fun <T> Project.typedProperty(name: String): T? = findProperty(name) as T?
 
-internal fun ModuleDependency.exclude(group: String?, module: String? = null) {
-    // TODO use buildMap() once it won't be experimental, maybe in Kotlin 1.5
-    exclude(
-        mutableMapOf<String, String>().apply {
-            group?.let { put("group", it) }
-            module?.let { put("module", it) }
-        },
-    )
+fun KotlinTargetContainerWithNativeShortcuts.iosAll(
+    configure: KotlinNativeTarget.() -> Unit = {}
+) {
+    ios(configure = configure)
+    iosSimulatorArm64(configure = configure)
+    sourceSets.maybeCreate("iosSimulatorArm64Main").apply {
+        dependsOn(sourceSets.getByName("iosMain"))
+    }
 }
