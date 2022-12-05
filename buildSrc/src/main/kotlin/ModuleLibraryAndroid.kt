@@ -22,7 +22,7 @@ class ModuleLibraryAndroid : Plugin<Project> by local plugin {
     kotlin {
         sourceSets["commonMain"].dependencies {
             implementation(Module.library.architecture)
-//            implementation(Module.library.logger)
+            implementation(Module.library.logger)
             implementation(Dependency.Koin.core)
         }
     }

@@ -24,7 +24,7 @@ class ModuleApp : Plugin<Project> by local plugin {
         sourceSets["commonMain"].dependencies {
             implementation(Module.library.architecture)
             implementation(Module.library.koinKtx)
-//            implementation(Module.library.logger)
+            implementation(Module.library.logger)
         }
     }
 }

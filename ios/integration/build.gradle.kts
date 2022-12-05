@@ -23,10 +23,10 @@ kotlin {
 //        project(":shared:generic:time"),
 //        project(":shared:generic:version"),
 //        project(":shared:library:architecture"),
-//        project(":shared:library:coroutines"),
+        project(":shared:library:coroutines"),
 //        project(":shared:library:intention"),
-//        project(":shared:library:koin-ktx"),
-//        project(":shared:library:mvvm"),
+        project(":shared:library:koin-ktx"),
+        project(":shared:library:mvvm"),
     )
 
     explicitApi()

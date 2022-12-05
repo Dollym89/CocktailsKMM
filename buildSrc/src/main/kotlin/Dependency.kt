@@ -57,10 +57,6 @@ object Dependency {
         val view = "androidx.camera:camera-view:$version"
     }
 
-    object QrScanner {
-        val zxing = "com.google.zxing:core:3.3.3"
-    }
-
     object Coroutines {
         private const val version = "1.6.1-native-mt"
         const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"

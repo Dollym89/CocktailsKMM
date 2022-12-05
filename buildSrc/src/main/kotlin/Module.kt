@@ -14,11 +14,15 @@ class Generic(factory: DependencyFactory) : ModuleType(factory, "generic") {
 }
 
 class Library(factory: DependencyFactory) : ModuleType(factory, "library") {
+    val activity by module()
     val architecture by module()
     val architectureFixtures by module()
     val coroutines by module()
     val coroutinesFixtures by module()
     val koinKtx by module()
+    val logger by module()
+    val loggerKermit by module()
+    val loggerKoin by module()
     val mvvm by module()
 }
 
