@@ -1,15 +1,7 @@
 import io.gitlab.arturbosch.detekt.Detekt
-
-//plugins {
-//    //trick: for the same plugin versions in all sub-modules
-//    id("com.android.application").version("7.3.1").apply(false)
-//    id("com.android.library").version("7.3.1").apply(false)
-//    kotlin("android").version("1.7.10").apply(false)
-//    kotlin("multiplatform").version("1.7.10").apply(false)
-//}
+import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
 
 plugins {
-    id("com.github.ben-manes.versions") version "0.39.0"
     id("io.gitlab.arturbosch.detekt") version "1.21.0"
 }
 
@@ -21,19 +13,12 @@ detekt {
     source = files("$projectDir")
     config = files("$projectDir/detekt.yml")
     parallel = true
-    reports {
-        xml.enabled = false
-        txt.enabled = false
-    }
-    autoCorrect = true
 }
 
 tasks.withType<Detekt> {
-    exclude("**/*gradle.kts")
     exclude("**/build/**")
     exclude("**/buildSrc/**")
-    exclude("resources")
-    exclude(".idea")
+    exclude("**/*gradle.kts")
 }
 
 tasks.register("clean", Delete::class) {

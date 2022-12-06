@@ -16,6 +16,6 @@ class ModuleAndroidFeature : Plugin<Project> by local plugin {
         "implementation"(Module.library.koinKtx)
         "implementation"(Module.library.logger)
         "implementation"(Module.library.mvvm)
-//        "implementation"(Module.library.navigation)
+        "implementation"(Module.library.navigation)
     }
 }

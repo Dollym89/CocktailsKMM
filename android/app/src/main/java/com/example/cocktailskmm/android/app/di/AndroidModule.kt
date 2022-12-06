@@ -10,13 +10,13 @@ internal val androidModule = module {
     singleOf(::MainActivityLifecycle)
 }
 
-//internal fun buildType(): BuildType = when (BuildConfig.BUILD_TYPE) {
+// internal fun buildType(): BuildType = when (BuildConfig.BUILD_TYPE) {
 //    "debug" -> BuildType.DEBUG
 //    "staging" -> BuildType.STAGING
 //    else -> BuildType.RELEASE
-//}
+// }
 
-//internal fun applicationVersion(): ApplicationVersion = AndroidApplicationVersion(
+// internal fun applicationVersion(): ApplicationVersion = AndroidApplicationVersion(
 //    code = BuildConfig.VERSION_CODE.toString(),
 //    name = BuildConfig.VERSION_NAME,
-//)
+// )

@@ -22,6 +22,7 @@ kotlin {
             implementation(loggerKermit)
             implementation(loggerKoin)
             implementation(mvvm)
+            implementation(navigation)
         }
     }
 }

@@ -14,9 +14,16 @@ dependencies {
     implementation(Module.library.koinKtx)
     implementation(Module.library.logger)
     implementation(Module.library.mvvm)
+    implementation(Module.library.navigation)
 
     testImplementation(Module.library.architectureFixtures)
     testImplementation(Module.library.coroutinesFixtures)
+
+    testImplementation(Dependency.Coroutines.test)
+    testImplementation(Dependency.JUnit.params)
+    testImplementation(Dependency.Koin.test)
+    testImplementation(Dependency.Kotest.assertions)
+    testImplementation(Dependency.Mockk.kotlin)
 }
 
 configurations.all {

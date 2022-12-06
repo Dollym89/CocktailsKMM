@@ -29,7 +29,7 @@ class ModuleFeature : Plugin<Project> by local plugin {
             implementation(Module.library.koinKtx)
 //            implementation(Module.library.localisation)
             implementation(Module.library.logger)
-//            implementation(Module.library.navigation)
+            implementation(Module.library.navigation)
         }
     }
 }

@@ -1,9 +1,9 @@
-import kotlin.properties.ReadOnlyProperty
-import kotlin.reflect.KProperty
 import org.gradle.api.artifacts.ProjectDependency
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.kotlin.dsl.project
 import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
+import kotlin.properties.ReadOnlyProperty
+import kotlin.reflect.KProperty
 
 class Feature(factory: DependencyFactory) : ModuleType(factory, "feature") {
 
@@ -24,6 +24,7 @@ class Library(factory: DependencyFactory) : ModuleType(factory, "library") {
     val loggerKermit by module()
     val loggerKoin by module()
     val mvvm by module()
+    val navigation by module()
 }
 
 abstract class ModuleType(
