@@ -1,0 +1,18 @@
+package com.example.network.di
+
+import clv.library.koin.di.factoryOf
+import io.ktor.client.engine.HttpClientEngine
+import io.ktor.client.engine.okhttp.OkHttp
+import org.koin.core.module.Module
+
+internal actual fun Module.platformDeclaration() {
+    factoryOf(::httpClientEngine)
+}
+
+private fun httpClientEngine(): HttpClientEngine = OkHttp.create {
+    config {
+        followRedirects(true)
+        followSslRedirects(true)
+        retryOnConnectionFailure(true)
+    }
+}

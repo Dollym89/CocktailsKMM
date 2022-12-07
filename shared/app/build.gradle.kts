@@ -1,6 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    kotlin("plugin.serialization")
 }
 
 apply<ModuleApp>()
@@ -11,6 +12,9 @@ android {
 
 kotlin {
     sourceSets["commonMain"].dependencies {
+        implementation(Module.feature.ingredient)
+        implementation(Module.generic.network)
+
         with(Module.library) {
             implementation(activity)
             implementation(architecture)

@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    kotlin("plugin.serialization")
 }
 
 apply<ModuleAndroidApp>()
@@ -15,6 +16,9 @@ dependencies {
     implementation(Module.library.logger)
     implementation(Module.library.mvvm)
     implementation(Module.library.navigation)
+
+    implementation(Module.feature.ingredient)
+    implementation(Module.generic.network)
 
     testImplementation(Module.library.architectureFixtures)
     testImplementation(Module.library.coroutinesFixtures)

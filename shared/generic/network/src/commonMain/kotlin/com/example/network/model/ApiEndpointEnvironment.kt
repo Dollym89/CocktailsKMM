@@ -1,0 +1,53 @@
+//package iot.generic.network.model
+//
+//public enum class ApiEndpointEnvironment(
+//    public val varApi: VarApisEndpointEnvironment,
+//    public val varTokenApi: VarTokenEndpointEnvironment,
+//    public val healthApi: HealthEndpointEnvironment,
+//    public val configApi: ConfigEndpointEnvironment,
+//    public val mlsApi: MLSEndpointEnvironment,
+//    public val swUpdateApi: SwUpdateEndpointEnvironment,
+//    public val loggerApi: LoggerEndpointEnvironment,
+//    public val liveLoggerApi: LiveLoggerEndpointEnvironment,
+//) {
+//    DEV(
+//        VarApisEndpointEnvironment.DEV,
+//        VarTokenEndpointEnvironment.DEV,
+//        HealthEndpointEnvironment.DEV,
+//        ConfigEndpointEnvironment.DEV,
+//        MLSEndpointEnvironment.DEV,
+//        SwUpdateEndpointEnvironment.DEV,
+//        LoggerEndpointEnvironment.DEV,
+//        LiveLoggerEndpointEnvironment.DEV,
+//    ),
+//    TEST(
+//        VarApisEndpointEnvironment.TEST,
+//        VarTokenEndpointEnvironment.TEST,
+//        HealthEndpointEnvironment.TEST,
+//        ConfigEndpointEnvironment.TEST,
+//        MLSEndpointEnvironment.TEST,
+//        SwUpdateEndpointEnvironment.TEST,
+//        LoggerEndpointEnvironment.TEST,
+//        LiveLoggerEndpointEnvironment.TEST,
+//    ),
+//    QA(
+//        VarApisEndpointEnvironment.QA,
+//        VarTokenEndpointEnvironment.QA,
+//        HealthEndpointEnvironment.QA,
+//        ConfigEndpointEnvironment.QA,
+//        MLSEndpointEnvironment.QA,
+//        SwUpdateEndpointEnvironment.QA,
+//        LoggerEndpointEnvironment.QA,
+//        LiveLoggerEndpointEnvironment.QA,
+//    ),
+//    PRODUCTION(
+//        VarApisEndpointEnvironment.PRODUCTION,
+//        VarTokenEndpointEnvironment.PRODUCTION,
+//        HealthEndpointEnvironment.PRODUCTION,
+//        ConfigEndpointEnvironment.PRODUCTION,
+//        MLSEndpointEnvironment.PRODUCTION,
+//        SwUpdateEndpointEnvironment.PRODUCTION,
+//        LoggerEndpointEnvironment.PRODUCTION,
+//        LiveLoggerEndpointEnvironment.PRODUCTION,
+//    ),
+//}

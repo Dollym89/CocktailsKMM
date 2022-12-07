@@ -1,4 +1,4 @@
-import java.util.Locale
+import java.util.*
 
 @Suppress("SpellCheckingInspection")
 object Dependency {
@@ -92,12 +92,15 @@ object Dependency {
     const val kermit = "co.touchlab:kermit:1.1.3"
 
     object Ktor {
-        private const val version = "1.6.7"
+        private const val version = "2.1.1"
 
+        const val auth = "io.ktor:ktor-client-auth:$version"
         const val core = "io.ktor:ktor-client-core:$version"
         const val json = "io.ktor:ktor-client-json:$version"
+        const val contentNegotiation = "io.ktor:ktor-client-content-negotiation:$version"
         const val serialization = "io.ktor:ktor-client-serialization:$version"
         const val logging = "io.ktor:ktor-client-logging:$version"
+        const val websockets = "io.ktor:ktor-client-websockets:$version"
 
         object Engine {
             const val android = "io.ktor:ktor-client-okhttp:$version"
@@ -134,7 +137,9 @@ object Dependency {
     const val okHttp = "com.squareup.okhttp3:okhttp:4.9.3"
 
     object Serialization {
-        const val core = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0"
+        private const val version = "1.4.0"
+        const val core = "org.jetbrains.kotlinx:kotlinx-serialization-core:$version"
+        const val json = "org.jetbrains.kotlinx:kotlinx-serialization-json:$version"
     }
 
     object Settings {

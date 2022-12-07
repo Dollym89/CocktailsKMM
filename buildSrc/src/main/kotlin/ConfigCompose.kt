@@ -23,6 +23,7 @@ class ConfigCompose: Plugin<Project> by local plugin {
 
     kotlin {
         sourceSets["androidMain"].dependencies {
+            api(Dependency.Compose.activity)
             api(Dependency.Compose.compiler)
             api(Dependency.Compose.foundation)
             api(Dependency.Compose.material)
