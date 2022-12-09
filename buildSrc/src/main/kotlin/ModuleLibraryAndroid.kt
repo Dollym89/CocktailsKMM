@@ -9,7 +9,7 @@ class ModuleLibraryAndroid : Plugin<Project> by local plugin {
         explicitApiAndroid()
 
         android()
-        ios()
+        iosAll()
     }
 
     apply<ConfigAndroidBuild>()

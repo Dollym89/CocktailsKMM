@@ -6,10 +6,9 @@ class ConfigTestJvm : Plugin<Project> by local plugin {
     kotlin {
         sourceSets["jvmTest"].dependencies {
             implementation(Dependency.JUnit.params)
-            implementation(Dependency.JUnit.core)
-            implementation(Dependency.kotest)
-            implementation(Dependency.mockk)
-            runtimeOnly(Dependency.Serialization.core)
+            implementation(Dependency.JUnit.runtime)
+            implementation(Dependency.Kotest.assertions)
+            implementation(Dependency.Mockk.kotlin)
         }
     }
 }

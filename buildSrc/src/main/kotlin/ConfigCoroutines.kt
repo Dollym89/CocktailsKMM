@@ -4,23 +4,21 @@ import org.gradle.kotlin.dsl.get
 
 class ConfigCoroutines : Plugin<Project> by local plugin {
     kotlin {
-        sourceSets.apply {
-            all {
-                languageSettings.apply {
-                    optIn("kotlin.time.ExperimentalTime") // TODO: remove?
-                    optIn("kotlinx.coroutines.ExperimentalCoroutinesApi")
-                    optIn("kotlinx.coroutines.FlowPreview")
-                }
+        sourceSets.all {
+            languageSettings {
+                optIn("kotlinx.coroutines.ExperimentalCoroutinesApi")
+                optIn("kotlinx.coroutines.FlowPreview")
             }
         }
         sourceSets["commonMain"].dependencies {
-            implementation(Module.library.architecture)
+            implementation(Module.library.coroutines)
         }
         sourceSets["androidMain"].dependencies {
             api(Dependency.Coroutines.android)
         }
         sourceSets["androidTest"].dependencies {
             implementation(Module.library.architectureFixtures)
+            implementation(Module.library.coroutinesFixtures)
             implementation(Dependency.Coroutines.test)
         }
     }

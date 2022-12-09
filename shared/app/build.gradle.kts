@@ -1,56 +1,32 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    kotlin("plugin.serialization")
+}
+
+apply<ModuleApp>()
+
+android {
+    namespace = "cocktailsKMM.app"
 }
 
 kotlin {
-    android()
-    
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
-        it.binaries.framework {
-            baseName = "shared"
-        }
-    }
+    sourceSets["commonMain"].dependencies {
+        implementation(Module.feature.ingredient)
+        implementation(Module.generic.network)
 
-    sourceSets {
-        val commonMain by getting
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test"))
-            }
+        with(Module.library) {
+            implementation(activity)
+            implementation(architecture)
+            implementation(architectureFixtures)
+            implementation(coroutines)
+            implementation(coroutinesFixtures)
+            implementation(koinKtx)
+            implementation(logger)
+            implementation(loggerKermit)
+            implementation(loggerKoin)
+            implementation(mvvm)
+            implementation(navigation)
         }
-        val androidMain by getting
-        val androidTest by getting
-        val iosX64Main by getting
-        val iosArm64Main by getting
-        val iosSimulatorArm64Main by getting
-        val iosMain by creating {
-            dependsOn(commonMain)
-            iosX64Main.dependsOn(this)
-            iosArm64Main.dependsOn(this)
-            iosSimulatorArm64Main.dependsOn(this)
-        }
-        val iosX64Test by getting
-        val iosArm64Test by getting
-        val iosSimulatorArm64Test by getting
-        val iosTest by creating {
-            dependsOn(commonTest)
-            iosX64Test.dependsOn(this)
-            iosArm64Test.dependsOn(this)
-            iosSimulatorArm64Test.dependsOn(this)
-        }
-    }
-}
-
-android {
-    namespace = "com.example.cocktailskmm"
-    compileSdk = 32
-    defaultConfig {
-        minSdk = 28
-        targetSdk = 32
     }
 }

@@ -4,21 +4,47 @@ plugins {
     kotlin("plugin.serialization")
 }
 
+apply<ModuleAndroidApp>()
+apply<ConfigCompose>()
+
+dependencies {
+    implementation(project(":shared:app"))
+    implementation(Module.library.activity)
+    implementation(Module.library.architecture)
+    implementation(Module.library.coroutines)
+    implementation(Module.library.koinKtx)
+    implementation(Module.library.logger)
+    implementation(Module.library.mvvm)
+    implementation(Module.library.navigation)
+
+    implementation(Module.feature.ingredient)
+    implementation(Module.generic.network)
+
+    testImplementation(Module.library.architectureFixtures)
+    testImplementation(Module.library.coroutinesFixtures)
+
+    testImplementation(Dependency.Coroutines.test)
+    testImplementation(Dependency.JUnit.params)
+    testImplementation(Dependency.Koin.test)
+    testImplementation(Dependency.Kotest.assertions)
+    testImplementation(Dependency.Mockk.kotlin)
+}
+
+configurations.all {
+    resolutionStrategy {
+        force(Dependency.Coroutines.core)
+    }
+}
+
 android {
     namespace = "com.example.cocktailskmm.android"
-    compileSdk = 32
+
     defaultConfig {
         applicationId = "com.example.cocktailskmm.android"
-        minSdk = 28
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+//        resourceConfigurations += setOf("en")
     }
     buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.0"
+        buildConfig = true
     }
     packagingOptions {
         resources {
@@ -30,14 +56,4 @@ android {
             isMinifyEnabled = false
         }
     }
-}
-
-dependencies {
-    implementation(project(":shared:app"))
-    implementation("androidx.compose.ui:ui:1.2.1")
-    implementation("androidx.compose.ui:ui-tooling:1.2.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.2.1")
-    implementation("androidx.compose.foundation:foundation:1.2.1")
-    implementation("androidx.compose.material:material:1.2.1")
-    implementation("androidx.activity:activity-compose:1.5.1")
 }

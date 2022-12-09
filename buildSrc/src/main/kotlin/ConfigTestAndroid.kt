@@ -6,11 +6,9 @@ class ConfigTestAndroid : Plugin<Project> by local plugin {
     kotlin {
         sourceSets["androidTest"].dependencies {
             implementation(Dependency.JUnit.params)
-            implementation(Dependency.JUnit.core)
-            implementation(Dependency.Test.turbine)
-            implementation(Dependency.kotest)
-            implementation(Dependency.mockk)
-            runtimeOnly(Dependency.Serialization.core)
+            implementation(Dependency.JUnit.runtime)
+            implementation(Dependency.Kotest.assertions)
+            implementation(Dependency.Mockk.kotlin)
         }
     }
 }
