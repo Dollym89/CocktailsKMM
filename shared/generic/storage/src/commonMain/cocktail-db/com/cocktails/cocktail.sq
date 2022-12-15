@@ -1,0 +1,53 @@
+CREATE TABLE cocktail (
+    id INTEGER NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    nameGrouped TEXT NOT NULL,
+    nameModif TEXT NOT NULL,
+    voltage REAL NOT NULL,
+    preparation TEXT NOT NULL,
+    desc TEXT NOT NULL,
+    imgFileName TEXT NOT NULL,
+    videoUrl TEXT NOT NULL,
+    websiteUrl TEXT NOT NULL,
+    tasteFK INTEGER NOT NULL,
+    numShowed INTEGER NOT NULL,
+    dataCol TEXT NOT NULL,
+    categoryFK INTEGER NOT NULL,
+    numKcal REAL NOT NULL,
+    flags TEXT NOT NULL,
+    type INTEGER NOT NULL
+);
+
+insertCocktailObj:
+INSERT OR REPLACE INTO cocktail (
+    id,
+    name,
+    nameGrouped,
+    nameModif,
+    voltage,
+    preparation,
+    desc,
+    imgFileName,
+    videoUrl,
+    websiteUrl,
+    tasteFK,
+    numShowed,
+    dataCol,
+    categoryFK,
+    numKcal,
+    flags,
+    type
+)
+VALUES ?;
+
+removeAllCocktails:
+DELETE FROM cocktail;
+
+removeCocktail:
+DELETE FROM cocktail WHERE id = ?;
+
+selectCocktailById:
+SELECT * FROM cocktail WHERE id = ?;
+
+selectAllCocktails:
+SELECT * FROM cocktail;

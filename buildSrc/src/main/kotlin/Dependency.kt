@@ -73,6 +73,7 @@ object Dependency {
 
     object SqlDelight {
         private const val version = "1.5.3"
+        const val runtime = "com.squareup.sqldelight:runtime:$version"
         const val coroutines = "com.squareup.sqldelight:coroutines-extensions:$version"
         const val androidDriver = "com.squareup.sqldelight:android-driver:$version"
         const val iosDriver = "com.squareup.sqldelight:native-driver:$version"
