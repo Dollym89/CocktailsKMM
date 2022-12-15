@@ -12,8 +12,15 @@ android {
 
 kotlin {
     sourceSets["commonMain"].dependencies {
-        implementation(Module.feature.ingredient)
-        implementation(Module.generic.network)
+        with(Module.feature) {
+            implementation(ingredient)
+        }
+
+        with(Module.generic) {
+            implementation(cocktailDatabase)
+            implementation(network)
+            implementation(storage)
+        }
 
         with(Module.library) {
             implementation(activity)
@@ -28,5 +35,17 @@ kotlin {
             implementation(mvvm)
             implementation(navigation)
         }
+    }
+
+    sourceSets["androidMain"].dependencies {
+        implementation(Module.library.loggerKermit)
+        implementation(Dependency.Ktor.Engine.android)
+        implementation(Dependency.SqlDelight.androidDriver)
+    }
+
+    sourceSets["iosMain"].dependencies {
+        implementation(Module.library.loggerKermit)
+        implementation(Dependency.Ktor.Engine.ios)
+        implementation(Dependency.SqlDelight.iosDriver)
     }
 }

@@ -18,7 +18,6 @@ dependencies {
     implementation(Module.library.navigation)
 
     implementation(Module.feature.ingredient)
-    implementation(Module.generic.network)
 
     testImplementation(Module.library.architectureFixtures)
     testImplementation(Module.library.coroutinesFixtures)
