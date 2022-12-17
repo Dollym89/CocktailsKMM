@@ -9,5 +9,6 @@
 import Multiplatform
 
 let appModule = module {
-    $0.factory(of: CocktailApp.self, using: CocktailApp.init)
+    $0.factory(using: CocktailsDashboard.init)
+    $0.single(using: CocktailsNavigation.init)
 }
