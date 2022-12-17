@@ -10,7 +10,10 @@ import Multiplatform
 extension KoinApplication {
     func registerIosModules() {
         modules(
-            appModule
+            appModule,
+            ingredientsModule,
+            cocktailsCabinetModule,
+            cocktailsModule
         )
     }
 }

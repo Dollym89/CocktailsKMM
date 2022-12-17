@@ -2,14 +2,14 @@ import SwiftUI
 import Multiplatform
 
 @main
-struct CocktailApp: App {
+struct CocktailApp: App, KoinComponent {
     init() {
         SharedApplication().doInit { $0.registerIosModules() }
     }
 
 	var body: some Scene {
 		WindowGroup {
-			ContentView()
+            get(CocktailsDashboard.self)
 		}
 	}
 }
