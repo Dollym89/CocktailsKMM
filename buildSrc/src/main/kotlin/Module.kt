@@ -6,11 +6,11 @@ import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
 class Feature(factory: DependencyFactory) : ModuleType(factory, "feature") {
-    val ingredient by module()
+    val ingredients by module()
 }
 
 class Generic(factory: DependencyFactory) : ModuleType(factory, "generic") {
-    val ingredientsDatabase by module()
+    val deviceIngredients by module()
     val network by module()
     val storage by module()
 }

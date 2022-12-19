@@ -1,4 +1,4 @@
-CREATE TABLE ingredient (
+CREATE TABLE ingredientEx (
     id INTEGER NOT NULL PRIMARY KEY,
     name TEXT NOT NULL,
     nameGrouped TEXT NOT NULL,
@@ -18,8 +18,8 @@ CREATE TABLE ingredient (
     type INTEGER NOT NULL
 );
 
-insertIngredientObj:
-INSERT OR REPLACE INTO ingredient (
+insertIngredientExObj:
+INSERT OR REPLACE INTO ingredientEx (
     id,
     name,
     nameGrouped,
@@ -41,13 +41,7 @@ INSERT OR REPLACE INTO ingredient (
 VALUES ?;
 
 removeAllIngredients:
-DELETE FROM ingredient;
-
-removeIngredient:
-DELETE FROM ingredient WHERE id = ?;
-
-selectIngredientById:
-SELECT * FROM ingredient WHERE id = ?;
+DELETE FROM ingredientEx;
 
 selectAllIngredients:
-SELECT * FROM ingredient;
+SELECT * FROM ingredientEx;
