@@ -17,7 +17,7 @@ kotlin {
         }
 
         with(Module.generic) {
-            implementation(cocktailDatabase)
+            implementation(ingredientsDatabase)
             implementation(network)
             implementation(storage)
         }

@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
 import clv.library.navigation.system.NavigationActivityDelegate
 import com.example.ingredient.cocktailskmm.data.IngredientsApi
-import com.example.network.data.networkCall
+// import com.example.network.data.networkCall
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 
@@ -27,9 +27,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(lifecycle.onCreate(savedInstanceState))
         val result = api
         lifecycleScope.launch {
-            networkCall {
-                result.downloadIngredients()
-            }
+//            networkCall {
+//                result.downloadIngredients()
+//            }
         }
         setContent {
             Scaffold {

@@ -1,4 +1,4 @@
-CREATE TABLE cocktail (
+CREATE TABLE ingredient (
     id INTEGER NOT NULL PRIMARY KEY,
     name TEXT NOT NULL,
     nameGrouped TEXT NOT NULL,
@@ -18,8 +18,8 @@ CREATE TABLE cocktail (
     type INTEGER NOT NULL
 );
 
-insertCocktailObj:
-INSERT OR REPLACE INTO cocktail (
+insertIngredientObj:
+INSERT OR REPLACE INTO ingredient (
     id,
     name,
     nameGrouped,
@@ -40,14 +40,14 @@ INSERT OR REPLACE INTO cocktail (
 )
 VALUES ?;
 
-removeAllCocktails:
-DELETE FROM cocktail;
+removeAllIngredients:
+DELETE FROM ingredient;
 
-removeCocktail:
-DELETE FROM cocktail WHERE id = ?;
+removeIngredient:
+DELETE FROM ingredient WHERE id = ?;
 
-selectCocktailById:
-SELECT * FROM cocktail WHERE id = ?;
+selectIngredientById:
+SELECT * FROM ingredient WHERE id = ?;
 
-selectAllCocktails:
-SELECT * FROM cocktail;
+selectAllIngredients:
+SELECT * FROM ingredient;

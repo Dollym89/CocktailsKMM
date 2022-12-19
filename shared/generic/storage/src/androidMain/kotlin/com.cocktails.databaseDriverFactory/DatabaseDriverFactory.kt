@@ -1,7 +1,6 @@
 package com.cocktails.databaseDriverFactory
 
 import android.app.Application
-import android.content.Context
 import com.squareup.sqldelight.android.AndroidSqliteDriver
 import com.squareup.sqldelight.db.SqlDriver
 
