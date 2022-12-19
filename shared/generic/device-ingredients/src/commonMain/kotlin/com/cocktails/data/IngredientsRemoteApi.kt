@@ -1,6 +1,7 @@
-package com.example.ingredient.cocktailskmm.data
+package com.cocktails.data
 
-import clv.library.logger.infrastructure.logD
+import com.cocktails.domain.IngredientsApi
+import com.cocktails.model.IngredientRemoteResponseDTO
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.request.*
@@ -9,22 +10,19 @@ import io.ktor.http.*
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
-public class IngredientsApi(
+public class IngredientsRemoteApi(
     private val httpClient: HttpClient,
     private val json: Json,
-) {
-
-    private val baseUrl = ""
-
-    public suspend fun downloadIngredients() {
+): IngredientsApi {
+    public override suspend fun loadAll(): List<IngredientRemoteResponseDTO> {
         val response: HttpResponse = httpClient.get(
-            urlString = baseUrl,
+            urlString = "https://cocktailsguru.com/asjksdyuCRtyby56fgasdhbf/guru/cocktail/data/mix/ingredAlco.gz",
         ) {
             headers {
                 contentType(ContentType.Application.Json)
             }
         }
         val result: String = response.body()
-        logD(result)
+        return json.decodeFromString(result)
     }
 }

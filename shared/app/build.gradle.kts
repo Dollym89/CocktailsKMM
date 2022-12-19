@@ -13,11 +13,11 @@ android {
 kotlin {
     sourceSets["commonMain"].dependencies {
         with(Module.feature) {
-            implementation(ingredient)
+            implementation(ingredients)
         }
 
         with(Module.generic) {
-            implementation(ingredientsDatabase)
+            implementation(deviceIngredients)
             implementation(network)
             implementation(storage)
         }

@@ -12,7 +12,16 @@ kotlin {
             dependencies {
                 with(Module) {
                     implementation(library.logger)
+                    implementation(generic.network)
                     implementation(generic.storage)
+                }
+                with(Dependency.Ktor) {
+                    implementation(auth)
+                    implementation(contentNegotiation)
+                    implementation(core)
+                    implementation(json)
+                    implementation(logging)
+                    implementation(serialization)
                 }
             }
         }

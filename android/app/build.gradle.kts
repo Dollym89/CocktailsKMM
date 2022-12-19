@@ -17,7 +17,7 @@ dependencies {
     implementation(Module.library.mvvm)
     implementation(Module.library.navigation)
 
-    implementation(Module.feature.ingredient)
+    implementation(Module.feature.ingredients)
 
     testImplementation(Module.library.architectureFixtures)
     testImplementation(Module.library.coroutinesFixtures)
