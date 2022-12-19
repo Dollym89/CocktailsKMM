@@ -10,7 +10,7 @@ class Feature(factory: DependencyFactory) : ModuleType(factory, "feature") {
 }
 
 class Generic(factory: DependencyFactory) : ModuleType(factory, "generic") {
-    val cocktailDatabase by module()
+    val ingredientsDatabase by module()
     val network by module()
     val storage by module()
 }

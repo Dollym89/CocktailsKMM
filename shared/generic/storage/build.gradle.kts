@@ -35,8 +35,8 @@ kotlin {
 }
 
 sqldelight {
-    database("CocktailDatabase") {
+    database("IngredientsDatabase") {
         packageName = "com.cocktails"
-        sourceFolders = listOf("cocktail-db")
+        sourceFolders = listOf("ingredients-db")
     }
 }
