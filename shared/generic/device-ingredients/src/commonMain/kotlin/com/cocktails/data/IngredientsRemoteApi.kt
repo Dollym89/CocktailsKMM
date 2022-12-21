@@ -13,10 +13,11 @@ import kotlinx.serialization.json.Json
 public class IngredientsRemoteApi(
     private val httpClient: HttpClient,
     private val json: Json,
-): IngredientsApi {
+) : IngredientsApi {
     public override suspend fun loadAll(): List<IngredientRemoteResponseDTO> {
+        // TODO : Switch to HTTPS
         val response: HttpResponse = httpClient.get(
-            urlString = "https://cocktailsguru.com/asjksdyuCRtyby56fgasdhbf/guru/cocktail/data/mix/ingredAlco.gz",
+            urlString = "http://cocktailsguru.net/ingredient/alcoholic/all",
         ) {
             headers {
                 contentType(ContentType.Application.Json)

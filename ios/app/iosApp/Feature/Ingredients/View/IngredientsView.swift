@@ -7,15 +7,17 @@
 //
 
 import SwiftUI
+import Multiplatform
 
 struct IngredientsView: View {
+    @ViewModel var viewModel: IngredientsViewModel
     var body: some View {
         Text("Ingredients")
     }
 }
 
-struct IngredientsView_Previews: PreviewProvider {
-    static var previews: some View {
-        IngredientsView()
-    }
-}
+//struct IngredientsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        IngredientsView()
+//    }
+//}

@@ -5,6 +5,7 @@ plugins {
 kotlin {
     val projectDependencies = listOf(
         project(":shared:app"),
+        project(":shared:feature:ingredients"),
 //        project(":shared:feature:dashboard"),
 //        project(":shared:feature:debug"),
 //        project(":shared:feature:initialization"),
