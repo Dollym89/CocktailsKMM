@@ -24,7 +24,7 @@ public val ingredientsDatabaseModule: Module = module {
     }
 
     factory(named(REMOTE_LOAD_INGREDIENTS)) {
-        IngredientsUseCase.LoadAll(get(named(REMOTE_LOAD_INGREDIENTS)))
+        IngredientsUseCase.LoadAll(get(named(REMOTE_REPOSITORY)))
     }
 
     factoryOf(::IngredientsRemoteApi) bind IngredientsApi::class
@@ -32,8 +32,9 @@ public val ingredientsDatabaseModule: Module = module {
     factoryOf(::IngredientsDTOLocalConverter)
 }
 
-private const val LOCAL_REPOSITORY: String = "local_repo"
+
 private const val LOCAL_LOAD_INGREDIENTS: String = "load_local"
-private const val REMOTE_LOAD_INGREDIENTS: String = "remote_local"
-private const val REMOTE_REPOSITORY: String = "remote_repo"
+public const val REMOTE_LOAD_INGREDIENTS: String = "remote_local"
+private const val LOCAL_REPOSITORY: String = "local_repo"
+public const val REMOTE_REPOSITORY: String = "remote_repo"
 

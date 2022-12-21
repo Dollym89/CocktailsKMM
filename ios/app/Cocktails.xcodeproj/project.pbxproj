@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,10 @@
 		DAE35DE1294E24A10038EEB3 /* IngredientsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE35DE0294E24A10038EEB3 /* IngredientsModule.swift */; };
 		DAE35DE3294E24B40038EEB3 /* CocktailsCabinetModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE35DE2294E24B40038EEB3 /* CocktailsCabinetModule.swift */; };
 		DAE35DE5294E24BE0038EEB3 /* CocktailsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE35DE4294E24BE0038EEB3 /* CocktailsModule.swift */; };
+		DAE35DEA2951F6F80038EEB3 /* BaseViewModel+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE35DE92951F6F80038EEB3 /* BaseViewModel+Combine.swift */; };
+		DAE35DEF2951F7730038EEB3 /* Ktx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE35DED2951F7730038EEB3 /* Ktx.swift */; };
+		DAE35DF02951F7730038EEB3 /* CoroutinePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE35DEE2951F7730038EEB3 /* CoroutinePublisher.swift */; };
+		DAE35DF32951FECE0038EEB3 /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = DAE35DF22951FECE0038EEB3 /* CombineExt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +73,9 @@
 		DAE35DE0294E24A10038EEB3 /* IngredientsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsModule.swift; sourceTree = "<group>"; };
 		DAE35DE2294E24B40038EEB3 /* CocktailsCabinetModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsCabinetModule.swift; sourceTree = "<group>"; };
 		DAE35DE4294E24BE0038EEB3 /* CocktailsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsModule.swift; sourceTree = "<group>"; };
+		DAE35DE92951F6F80038EEB3 /* BaseViewModel+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseViewModel+Combine.swift"; sourceTree = "<group>"; };
+		DAE35DED2951F7730038EEB3 /* Ktx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ktx.swift; sourceTree = "<group>"; };
+		DAE35DEE2951F7730038EEB3 /* CoroutinePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoroutinePublisher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE35DF32951FECE0038EEB3 /* CombineExt in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				DA5489B8293F88850028A5E6 /* App */,
+				DAE35DE62951F6B10038EEB3 /* Generic */,
 				DAE35DD0294E238E0038EEB3 /* Feature */,
 				DA5489BE293F89370028A5E6 /* Library */,
 				DA5489D1293F8AB50028A5E6 /* Resources */,
@@ -141,6 +150,7 @@
 		DA5489BE293F89370028A5E6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				DAE35DEB2951F7730038EEB3 /* Coroutines */,
 				DAE35DCB294E20F30038EEB3 /* Navigation */,
 				DA5489BF293F89420028A5E6 /* Koin */,
 			);
@@ -288,6 +298,47 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+		DAE35DE62951F6B10038EEB3 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				DAE35DE72951F6F80038EEB3 /* Mvvm */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		DAE35DE72951F6F80038EEB3 /* Mvvm */ = {
+			isa = PBXGroup;
+			children = (
+				DAE35DE82951F6F80038EEB3 /* Presentation */,
+			);
+			path = Mvvm;
+			sourceTree = "<group>";
+		};
+		DAE35DE82951F6F80038EEB3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DAE35DE92951F6F80038EEB3 /* BaseViewModel+Combine.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DAE35DEB2951F7730038EEB3 /* Coroutines */ = {
+			isa = PBXGroup;
+			children = (
+				DAE35DEC2951F7730038EEB3 /* Domain */,
+			);
+			path = Coroutines;
+			sourceTree = "<group>";
+		};
+		DAE35DEC2951F7730038EEB3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				DAE35DED2951F7730038EEB3 /* Ktx.swift */,
+				DAE35DEE2951F7730038EEB3 /* CoroutinePublisher.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -306,6 +357,9 @@
 			dependencies = (
 			);
 			name = Cocktails;
+			packageProductDependencies = (
+				DAE35DF22951FECE0038EEB3 /* CombineExt */,
+			);
 			productName = iosApp;
 			productReference = 7555FF7B242A565900829871 /* Cocktails.app */;
 			productType = "com.apple.product-type.application";
@@ -318,7 +372,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = orgName;
+				ORGANIZATIONNAME = Cocktails;
 				TargetAttributes = {
 					7555FF7A242A565900829871 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -334,6 +388,9 @@
 				Base,
 			);
 			mainGroup = 7555FF72242A565900829871;
+			packageReferences = (
+				DAE35DF12951FECE0038EEB3 /* XCRemoteSwiftPackageReference "CombineExt" */,
+			);
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -382,6 +439,7 @@
 				DA5489CC293F89930028A5E6 /* KoinComponent.swift in Sources */,
 				2152FB042600AC8F00CF470E /* CocktailApp.swift in Sources */,
 				DA5489CB293F89930028A5E6 /* Single.swift in Sources */,
+				DAE35DEA2951F6F80038EEB3 /* BaseViewModel+Combine.swift in Sources */,
 				DA5489CD293F89930028A5E6 /* Module.swift in Sources */,
 				DA5489CE293F89930028A5E6 /* SwiftKClass.swift in Sources */,
 				DA5489CA293F89930028A5E6 /* CheckForTuple.swift in Sources */,
@@ -395,7 +453,9 @@
 				DAE35DE3294E24B40038EEB3 /* CocktailsCabinetModule.swift in Sources */,
 				DAE35DDC294E24750038EEB3 /* CocktailsView.swift in Sources */,
 				DAE35DE1294E24A10038EEB3 /* IngredientsModule.swift in Sources */,
+				DAE35DF02951F7730038EEB3 /* CoroutinePublisher.swift in Sources */,
 				DAE35DDA294E24690038EEB3 /* CocktailsCabinetView.swift in Sources */,
+				DAE35DEF2951F7730038EEB3 /* Ktx.swift in Sources */,
 				7555FF83242A565900829871 /* CocktailsDashboard.swift in Sources */,
 				DAE35DCA294E20D20038EEB3 /* CocktailsNavigation.swift in Sources */,
 				DA5489D0293F899D0028A5E6 /* Bind.swift in Sources */,
@@ -589,6 +649,25 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DAE35DF12951FECE0038EEB3 /* XCRemoteSwiftPackageReference "CombineExt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineExt.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DAE35DF22951FECE0038EEB3 /* CombineExt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAE35DF12951FECE0038EEB3 /* XCRemoteSwiftPackageReference "CombineExt" */;
+			productName = CombineExt;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7555FF73242A565900829871 /* Project object */;
 }
